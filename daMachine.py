@@ -46,13 +46,17 @@ def subtractMoney():
 @App.post('/returnChange')
 def returnChange():
 
-    if not request.json['Type'] or theWallet[request.json['Type']] == 0:
+    if not request.json['Amount']:
 
         return {'response': 'KO'}
 
     else:
 
-        theWallet[request.json['Type']] -= 1
+        C = round(float(request.json['Amount']), 2)
+
+        if (1):
+
+            return 1
 
         return {'response': 'OK'}
 

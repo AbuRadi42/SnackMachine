@@ -11,10 +11,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/SVM.png">
     <link rel="apple-touch-icon" sizes="167x167" href="../static/assets/SVM.png">
     <link rel="shortcut icon" href="../static/assets/SVM.Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css"> -->
     <link rel="stylesheet" href="../static/css/style.css">
     <meta name="theme-color" content="#008230">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="../static/js/tailwindcss.v3.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -222,7 +223,7 @@
             </h4>
         </div>
         <div class="grid grid-cols-1 gap-2">
-            <div class="bg-green-600 w-auto h-24 rounded-md">
+            <div class="bg-emerald-700 w-auto h-24 rounded-md">
                 <h1 id="screenContent" class="p-4 text-gray-800 font-mono">Please Enter The Number of The Item You Need
                 </h1>
             </div>
@@ -390,68 +391,62 @@
             if (!keypadIsResponsive)
                 return NaN;
 
-            // if (inputingPINMode) {
-            //     if (parseInt(Btn) >= 1 && parseInt(Btn) <= 9) {
-            //         if (document.getElementById('screenContent').innerText.includes(`Please Enter Your PIN:`)) {
-            //             if (theGivenPINCode.length < 4) {
-            //                 document.getElementById('screenContent').innerText += '*';
-            //                 theGivenPINCode += `${Btn}`;
-            //             } else {
-            //                 return NaN;
-            //             }
-            //         }
-            //     } else if (Btn == 'D') {
-            //         if (document.getElementById('screenContent').innerText.includes(`Please Enter Your PIN:`)) {
-            //             document.getElementById('screenContent').innerText = document.getElementById('screenContent').innerText.slice(0, document.getElementById('screenContent').innerText.length - 1);
+            if (inputingPINMode) {
+                if (parseInt(Btn) >= 0 && parseInt(Btn) <= 9) {
+                    if (theGivenPINCode.length < 4) {
+                        document.getElementById('screenContent').innerText += '*';
+                        theGivenPINCode += `${Btn}`;
+                    } else {
+                        return NaN;
+                    }
 
-            //             if (theGivenPINCode.length > 0) {
-            //                 theGivenPINCode = theGivenPINCode.slice(0, theGivenPINCode.length - 1);
-            //             } else {
-            //                 return NaN;
-            //             }
+                } else if (Btn == 'D') {
 
-            //         }
+                    if (theGivenPINCode.length > 0) {
+                        document.getElementById('screenContent').innerText = document.getElementById('screenContent').innerText.slice(0, document.getElementById('screenContent').innerText.length - 1);
+                        theGivenPINCode = theGivenPINCode.slice(0, theGivenPINCode.length - 1);
+                    } else {
+                        return NaN;
+                    }
 
-            //     } else if (Btn == 'E') {
-            //         if (document.getElementById('screenContent').innerText.includes(`Please Enter Your PIN:`)) {
+                } else if (Btn == 'E') {
 
-            //             if (theGivenPINCode.length != 4) {
-            //                 theGivenPINCode = '';
-            //                 document.getElementById('screenContent').innerText = 'Invalid PIN! Please Try Again...';
+                    if (theGivenPINCode.length != 4) {
+                        document.getElementById('screenContent').innerText = 'Invalid PIN! Please Try Again...';
 
-            //                 keypadIsResponsive = false;
+                        keypadIsResponsive = false;
+                        theGivenPINCode = '';
 
-            //                 setTimeout(() => {
-            //                     document.getElementById('screenContent').innerText = `Please Enter Your PIN: `;
-            //                     keypadIsResponsive = true;
-            //                 }, 1500);
-            //             } else {
-            //                 if (theGivenPINCode == '2016') {
-            //                     document.getElementById('screenContent').innerText = 'Confirmed; Payment Successful, Enjoy Your Item!';
+                        setTimeout(() => {
+                            document.getElementById('screenContent').innerText = `Please Enter Your PIN: `;
+                            keypadIsResponsive = true;
+                        }, 1500);
+                    } else {
+                        if (theGivenPINCode == '2016') {
+                            document.getElementById('screenContent').innerText = 'Confirmed; Payment Successful, Enjoy Your Item!';
 
-            //                     keypadIsResponsive = false;
+                            keypadIsResponsive = false;
+                            inputingPINMode = false;
+                            theGivenPINCode = '';
 
-            //                     setTimeout(() => {
-            //                         document.getElementById('screenContent').innerText = 'Please Enter The Number of The Item You Need';
-            //                         keypadIsResponsive = true;
-            //                     }, 2100);
-            //                 } else {
-            //                     theGivenPINCode = '';
-            //                     document.getElementById('screenContent').innerText = 'Invalid PIN! Please Try Again...';
+                            setTimeout(() => {
+                                document.getElementById('screenContent').innerText = 'Please Enter The Number of The Item You Need';
+                                keypadIsResponsive = true;
+                            }, 2100);
+                        } else {
+                            theGivenPINCode = '';
+                            document.getElementById('screenContent').innerText = 'Invalid PIN! Please Try Again...';
 
-            //                     keypadIsResponsive = false;
+                            keypadIsResponsive = false;
 
-            //                     setTimeout(() => {
-            //                         document.getElementById('screenContent').innerText = `Please Enter Your PIN: `;
-            //                         keypadIsResponsive = true;
-            //                     }, 1500);
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
-
-            if (parseInt(Btn) >= 1 && parseInt(Btn) <= 9) {
+                            setTimeout(() => {
+                                document.getElementById('screenContent').innerText = `Please Enter Your PIN: `;
+                                keypadIsResponsive = true;
+                            }, 1500);
+                        }
+                    }
+                }
+            } else if (parseInt(Btn) >= 1 && parseInt(Btn) <= 9) {
                 Btn = parseInt(Btn);
 
                 if (document.getElementById('screenContent').innerText == 'Please Enter The Number of The Item You Need') {
@@ -551,26 +546,6 @@
         }
 
         function insert(money) {
-            if (money == '10c') {
-                thePriceValueToPay = (thePriceValueToPay - 0.10).toFixed(2);
-                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
-            } else if (money == '20c') {
-                thePriceValueToPay = (thePriceValueToPay - 0.20).toFixed(2);
-                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
-            } else if (money == '50c') {
-                thePriceValueToPay = (thePriceValueToPay - 0.50).toFixed(2);
-                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
-            } else if (money == '$1') {
-                thePriceValueToPay = (thePriceValueToPay - 1.00).toFixed(2);
-                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
-            } else if (money == '$20') {
-                thePriceValueToPay = (thePriceValueToPay - 20.0).toFixed(2);
-                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
-            } else if (money == '$50') {
-                thePriceValueToPay = (thePriceValueToPay - 50.0).toFixed(2);
-                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
-            }
-
             let xhr = new XMLHttpRequest();
 
             xhr.open('POST', '/subtractMoney', true);
@@ -578,7 +553,11 @@
             xhr.addEventListener('load', function () {
                 if (JSON.parse(xhr.response)) {
 
-                    cashOpt();
+                    if (JSON.parse(xhr.response).response == 'KO') {
+                        return NaN;
+                    } else {
+                        cashOpt();
+                    }
 
                 } else {
 
@@ -586,6 +565,26 @@
 
                 }
             });
+
+            if (money == '10c' && parseInt(document.getElementById('10cQty').innerText.split(': ')[1]) != 0) {
+                thePriceValueToPay = (thePriceValueToPay - 0.10).toFixed(2);
+                document.getElementById('screenContent').innerText = `The remaining amount: $${thePriceValueToPay}`;
+            } else if (money == '20c' && parseInt(document.getElementById('20cQty').innerText.split(': ')[1]) != 0) {
+                thePriceValueToPay = (thePriceValueToPay - 0.20).toFixed(2);
+                document.getElementById('screenContent').innerText = `The remaining amount: $${thePriceValueToPay}`;
+            } else if (money == '50c' && parseInt(document.getElementById('50cQty').innerText.split(': ')[1]) != 0) {
+                thePriceValueToPay = (thePriceValueToPay - 0.50).toFixed(2);
+                document.getElementById('screenContent').innerText = `The remaining amount: $${thePriceValueToPay}`;
+            } else if (money == '$1' && parseInt(document.getElementById('1usdQty').innerText.split(': ')[1]) != 0) {
+                thePriceValueToPay = (thePriceValueToPay - 1.00).toFixed(2);
+                document.getElementById('screenContent').innerText = `The remaining amount: $${thePriceValueToPay}`;
+            } else if (money == '$20' && parseInt(document.getElementById('20usdQty').innerText.split(': ')[1]) != 0) {
+                thePriceValueToPay = (thePriceValueToPay - 20.0).toFixed(2);
+                document.getElementById('screenContent').innerText = `The remaining amount: $${thePriceValueToPay}`;
+            } else if (money == '$50' && parseInt(document.getElementById('50usdQty').innerText.split(': ')[1]) != 0) {
+                thePriceValueToPay = (thePriceValueToPay - 50.0).toFixed(2);
+                document.getElementById('screenContent').innerText = `The remaining amount: $${thePriceValueToPay}`;
+            }
 
             xhr.send(JSON.stringify({ 'Type': `_${money}` }));
 
@@ -615,7 +614,23 @@
         }
 
         function returnTheChange(value) {
+            let xhr = new XMLHttpRequest();
 
+            xhr.open('POST', '/returnChange', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.addEventListener('load', function () {
+                if (JSON.parse(xhr.response)) {
+
+                    cashOpt();
+
+                } else {
+
+                    // ...
+
+                }
+            });
+
+            xhr.send(JSON.stringify({ 'Amount': `_${value}` }));
         }
 
         function cardOpt() {
