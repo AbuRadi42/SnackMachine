@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "eslint": "^8.6.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.12"
+  },
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "gh-pages": "^2.0.1",
+    "html5-qrcode": "^2.1.6",
+    "tailwindcss-children": "^2.1.0"
+  }
+}

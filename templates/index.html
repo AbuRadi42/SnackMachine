@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="AbuRadi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>FıraTalk</title>
+    <link rel="apple-touch-icon" href="../static/assets/SVM.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/assets/SVM.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/SVM.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../static/assets/SVM.png">
+    <link rel="shortcut icon" href="../static/assets/SVM.Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <meta name="theme-color" content="#008230">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        freeGreen: '#008230',
+                        freeGreenLight: '#008230D9',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body id="body" class="flex flex-row bg-[#778899]">
+    <!-- | -->
+    <div id="layout" class="basis-2/3 p-8 pt-16 bg-[#778899] overflow-y-scroll">
+        <div id="menu" class="p-12 grid grid-cols-5 gap-4 bg-gray-400 rounded-3xl">
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">01: $1.60</h4>
+                </div>
+                <img src="../static/assets/Classic-Chips.png" alt="Classic Chips">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Classic Chips</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">02: $1.80</h4>
+                </div>
+                <img src="../static/assets/Cheese+Garlic.png" alt="Cheese & Garlic Chips">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Cheese & Garlic Chips</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">03: $1.60</h4>
+                </div>
+                <img src="../static/assets/Tomato-Chips.png" alt="Tomato Chips">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Tomato Chips</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">04: $1.80</h4>
+                </div>
+                <img src="../static/assets/Onion+Cream.png" alt="Onion & Cream Chips">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Onion & Cream Chips</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">05: $1.60</h4>
+                </div>
+                <img src="../static/assets/Lemon-Chips.png" alt="Lemon Chips">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Lemon Chips</p>
+            </div>
+            <!-- / -->
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">11: $0.60</h4>
+                </div>
+                <img src="../static/assets/Caramel Bar.png" alt="Caramel Bar">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Caramel Bar</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">12: $1.00</h4>
+                </div>
+                <img src="../static/assets/Double Classic Chocolate.png" alt="Double Classic Chocolate">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">2× Brown Chocolate</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">13: $1.10</h4>
+                </div>
+                <img src="../static/assets/Sweet Sour Gum.png" alt="Sweet Sour Gum">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Sweet & Sour Gum</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">14: $1.00</h4>
+                </div>
+                <img src="../static/assets/Double White Chocolate.png" alt="Double White Chocolate">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">2× White Chocolate</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">15: $1.80</h4>
+                </div>
+                <img src="../static/assets/Dark Chocolate.png" alt="Dark Chocolate">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Dark Chocolate</p>
+            </div>
+            <!-- / -->
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">21: $0.90</h4>
+                </div>
+                <img src="../static/assets/Butter Cookie.png" alt="Butter Cookie">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Butter Cookie</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">22: $0.90</h4>
+                </div>
+                <img src="../static/assets/Chocolate Cookie.png" alt="Chocolate Cookie">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Chocolate Cookie</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">23: $1.10</h4>
+                </div>
+                <img src="../static/assets/Oreo Cookie.png" alt="Oreo Cookie">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Oreo Cookie</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">24: $0.90</h4>
+                </div>
+                <img src="../static/assets/Milky Cookie.png" alt="Milky Cookie">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Milky Cookie</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">25: $0.90</h4>
+                </div>
+                <img src="../static/assets/Salty Cookies.png" alt="Salty Cookies">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Salty Cookies</p>
+            </div>
+            <!-- / -->
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">31: $1.50</h4>
+                </div>
+                <img src="../static/assets/Coca Cola.png" alt="Coca Cola">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Coca Cola</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">32: $2.70</h4>
+                </div>
+                <img src="../static/assets/Green Smoothie.png" alt="Green Smoothie">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Green Smoothie</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">33: $1.50</h4>
+                </div>
+                <img src="../static/assets/Pepsi Cola.png" alt="Pepsi Cola">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Pepsi Cola</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">34: $5.00</h4>
+                </div>
+                <img src="../static/assets/Bubble Tea.png" alt="Bubble Tea">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Bubble Tea</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">35: $0.80</h4>
+                </div>
+                <img src="../static/assets/Orange Juice.png" alt="Orange Juice">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Orange Juice</p>
+            </div>
+            <!-- / -->
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">41: $0.60</h4>
+                </div>
+                <img src="../static/assets/Peanuts.png" alt="Peanuts">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Peanuts</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">42: $2.60</h4>
+                </div>
+                <img src="../static/assets/Pistachios.png" alt="Pistachios">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Pistachios</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">43: $0.50</h4>
+                </div>
+                <img src="../static/assets/Crackers.png" alt="Crackers">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Crackers</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">44: $1.00</h4>
+                </div>
+                <img src="../static/assets/Jelly Beans.png" alt="Jelly Beans">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Jelly Beans</p>
+            </div>
+            <div class="p-2 bg-zinc-200 rounded-sm">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-lg">
+                    <h4 class="text-center text-sm">45: $1.80</h4>
+                </div>
+                <img src="../static/assets/Pretzel.png" alt="Pretzel">
+                <p class="p-1 text-center text-sm divide-blue-900 font-bold">Pretzel</p>
+            </div>
+        </div>
+    </div>
+    <div class="p-8 pt-16 basis-1/3 bg-gray-400 border-l-zinc-200">
+        <div class="">
+            <img class="mx-auto h-24 w-auto" src="../static/assets/SVM.png" alt="">
+            <h4 class="p-2 text-center text-white font-bold">
+                Welcome to Your Online Vending Machine
+            </h4>
+        </div>
+        <div class="grid grid-cols-1 gap-2">
+            <div class="bg-green-600 w-auto h-24 rounded-md">
+                <h1 id="screenContent" class="p-4 text-gray-800 font-mono">Please Enter The Number of The Item You Need
+                </h1>
+            </div>
+            <div class="p-1 bg-[#778899] grid grid-cols-3 gap-1 rounded-lg">
+                <div onclick="press(1)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    1
+                </div>
+                <div onclick="press(2)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    2
+                </div>
+                <div onclick="press(3)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    3
+                </div>
+                <div onclick="press(4)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    4
+                </div>
+                <div onclick="press(5)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    5
+                </div>
+                <div onclick="press(6)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    6
+                </div>
+                <div onclick="press(7)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    7
+                </div>
+                <div onclick="press(8)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    8
+                </div>
+                <div onclick="press(9)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    9
+                </div>
+                <div onclick="press('D')"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-red-600 text-center rounded-md cursor-default">
+                    Delete</div>
+                <div onclick="press(0)"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-white text-center rounded-md cursor-default">
+                    0
+                </div>
+                <div onclick="press('E')"
+                    class="m-2 p-2 bg-gray-400 hover:bg-gray-600 ease-in-out duration-300 text-green-600 text-center rounded-md cursor-default">
+                    Enter</div>
+            </div>
+            <br />
+            <div class="flex">
+                <h1 class="py-1 text-white">Built for</h1><img class="p-1 h-8" src="../static/assets/Freightos.png"
+                    alt="">
+            </div>
+            <div class="flex">
+                <h1 class="py-1 text-white">Using</h1>
+                <img class="p-1 h-8 w-auto" src="../static/assets/Python.svg.png">
+                <img class="p-1 h-8 w-auto" src="../static/assets/HTML.png">
+                <img class="p-1 h-8 w-auto" src="../static/assets/TailwindCSS.svg.png">
+                <h1 class="py-1 text-white">& Everybody's Favourite; </h1>
+                <img class="p-1 h-8 w-auto" src="../static/assets/JS.png">
+            </div>
+            <div class="flex">
+                <h1 class="py-1 text-white">And the「🧠」of Sameh AbuRadi</h1>
+            </div>
+        </div>
+    </div>
+    <div id="paymentOptions" class="absolute bottom-0 left-0 bg-[#FFFFFFe5] w-full h-[50%] hidden">
+        <div onclick="abortPayment()" class="absolute top-3 right-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.1" stroke="#556789"
+                class="w-6 h-6 hover:stroke-[4.2] ease-in-out duration-300">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+        <h1 class="p-8 text-lg text-center font-mono">Do you wanna pay using cash or card?</h1>
+        <div class="grid grid-cols-2 gap-4">
+            <div onclick="cashOpt()"
+                class="m-8 hover:bg-[#55678942] ease-in-out duration-300 border-border-solid border-2 border-gray-800 rounded-3xl">
+                <img class="mx-auto p-1 h-24 w-auto" src="../static/assets/CashOpt.png" alt="">
+                <h1 class="p-8 text-lg text-center font-mono cursor-default">Cash</h1>
+            </div>
+            <div onclick="cardOpt()"
+                class="m-8 hover:bg-[#55678942] ease-in-out duration-300 border-border-solid border-2 border-gray-800 rounded-3xl">
+                <img class="mx-auto p-1 h-24 w-auto" src="../static/assets/CardOpt.png" alt="">
+                <h1 class="p-8 text-lg text-center font-mono cursor-default">Card</h1>
+            </div>
+        </div>
+    </div>
+    <div id="cashProcedure" class="absolute bottom-0 left-0 bg-[#FFFFFFe5] w-full h-[50%] hidden">
+        <div onclick="abortPayment()" class="absolute top-3 right-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.1" stroke="#556789"
+                class="w-6 h-6 hover:stroke-[4.2] ease-in-out duration-300">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+        <h1 class="p-8 text-lg text-center font-mono">Here's what you've got in your wallet:</h1>
+        <div class="grid grid-cols-6 gap-4">
+            <div onclick="insert('10c')"
+                class="m-2 p-3 hover:bg-[#55678942] ease-in-out duration-300 border-border-solid border-2 border-gray-800 rounded-3xl">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-2xl">
+                    <h4 id="10cQty" class="text-center text-sm">Qty: </h4>
+                </div>
+                <img class="mx-auto p-1 h-24 w-auto" src="../static/assets/10c.png" alt="">
+                <h1 class="p-8 text-lg text-center font-mono cursor-default">10c</h1>
+            </div>
+            <div onclick="insert('20c')"
+                class="m-2 p-3 hover:bg-[#55678942] ease-in-out duration-300 border-border-solid border-2 border-gray-800 rounded-3xl">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-2xl z-10">
+                    <h4 id="20cQty" class="text-center text-sm">Qty: </h4>
+                </div>
+                <img class="relative -left-4 -mb-24 mx-auto p-1 h-24 w-auto" src="../static/assets/10c.png" alt="">
+                <img class="mx-auto mr-4 p-1 h-24 w-auto" src="../static/assets/10c.png" alt="">
+                <h1 class="p-8 text-lg text-center font-mono cursor-default">20c</h1>
+            </div>
+            <div onclick="insert('50c')"
+                class="m-2 p-3 hover:bg-[#55678942] ease-in-out duration-300 border-border-solid border-2 border-gray-800 rounded-3xl">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-2xl">
+                    <h4 id="50cQty" class="text-center text-sm">Qty: </h4>
+                </div>
+                <img class="mx-auto p-1 h-24 w-auto" src="../static/assets/50c.png" alt="">
+                <h1 class="p-8 text-lg text-center font-mono cursor-default">50c</h1>
+            </div>
+            <div onclick="insert('$1')"
+                class="m-2 p-3 hover:bg-[#55678942] ease-in-out duration-300 border-border-solid border-2 border-gray-800 rounded-3xl">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-2xl">
+                    <h4 id="1usdQty" class="text-center text-sm">Qty: </h4>
+                </div>
+                <img class="mx-auto p-1 h-24 w-auto" src="../static/assets/$1.png" alt="">
+                <h1 class="p-8 text-lg text-center font-mono cursor-default">$1</h1>
+            </div>
+            <div onclick="insert('$20')"
+                class="m-2 p-3 hover:bg-[#55678942] ease-in-out duration-300 border-border-solid border-2 border-gray-800 rounded-3xl">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-2xl">
+                    <h4 id="20usdQty" class="text-center text-sm">Qty: </h4>
+                </div>
+                <img class="mx-auto p-1 h-24 w-auto" src="../static/assets/$20.png" alt="">
+                <h1 class="p-8 text-lg text-center font-mono cursor-default">$20</h1>
+            </div>
+            <div onclick="insert('$50')"
+                class="m-2 p-3 hover:bg-[#55678942] ease-in-out duration-300 border-border-solid border-2 border-gray-800 rounded-3xl">
+                <div class="absolute w-[4.5rem] bg-[#FFFFFF99] border border-black rounded-2xl">
+                    <h4 id="50usdQty" class="text-center text-sm">Qty: </h4>
+                </div>
+                <img class="mx-auto p-1 h-24 w-auto" src="../static/assets/$50.png" alt="">
+                <h1 class="p-8 text-lg text-center font-mono cursor-default">$50</h1>
+            </div>
+        </div>
+        <p class="p-2 text-red-600 font-mono">* Other notes are not accepted...</p>
+    </div>
+    <div id="changeReturn" class="absolute bottom-0 left-0 bg-[#FFFFFFe5] w-full h-[50%] hidden">
+        <h1 class="p-8 text-lg text-center font-mono">Your Change is:</h1>
+
+    </div>
+    <script>
+        keypadIsResponsive = true;
+        thePriceValueToPay = 0.0;
+        inputingPINMode = false;
+        theGivenPINCode = '';
+
+        function press(Btn) {
+            // console.log(`pressed ${Btn}`);
+
+            if (!keypadIsResponsive)
+                return NaN;
+
+            // if (inputingPINMode) {
+            //     if (parseInt(Btn) >= 1 && parseInt(Btn) <= 9) {
+            //         if (document.getElementById('screenContent').innerText.includes(`Please Enter Your PIN:`)) {
+            //             if (theGivenPINCode.length < 4) {
+            //                 document.getElementById('screenContent').innerText += '*';
+            //                 theGivenPINCode += `${Btn}`;
+            //             } else {
+            //                 return NaN;
+            //             }
+            //         }
+            //     } else if (Btn == 'D') {
+            //         if (document.getElementById('screenContent').innerText.includes(`Please Enter Your PIN:`)) {
+            //             document.getElementById('screenContent').innerText = document.getElementById('screenContent').innerText.slice(0, document.getElementById('screenContent').innerText.length - 1);
+
+            //             if (theGivenPINCode.length > 0) {
+            //                 theGivenPINCode = theGivenPINCode.slice(0, theGivenPINCode.length - 1);
+            //             } else {
+            //                 return NaN;
+            //             }
+
+            //         }
+
+            //     } else if (Btn == 'E') {
+            //         if (document.getElementById('screenContent').innerText.includes(`Please Enter Your PIN:`)) {
+
+            //             if (theGivenPINCode.length != 4) {
+            //                 theGivenPINCode = '';
+            //                 document.getElementById('screenContent').innerText = 'Invalid PIN! Please Try Again...';
+
+            //                 keypadIsResponsive = false;
+
+            //                 setTimeout(() => {
+            //                     document.getElementById('screenContent').innerText = `Please Enter Your PIN: `;
+            //                     keypadIsResponsive = true;
+            //                 }, 1500);
+            //             } else {
+            //                 if (theGivenPINCode == '2016') {
+            //                     document.getElementById('screenContent').innerText = 'Confirmed; Payment Successful, Enjoy Your Item!';
+
+            //                     keypadIsResponsive = false;
+
+            //                     setTimeout(() => {
+            //                         document.getElementById('screenContent').innerText = 'Please Enter The Number of The Item You Need';
+            //                         keypadIsResponsive = true;
+            //                     }, 2100);
+            //                 } else {
+            //                     theGivenPINCode = '';
+            //                     document.getElementById('screenContent').innerText = 'Invalid PIN! Please Try Again...';
+
+            //                     keypadIsResponsive = false;
+
+            //                     setTimeout(() => {
+            //                         document.getElementById('screenContent').innerText = `Please Enter Your PIN: `;
+            //                         keypadIsResponsive = true;
+            //                     }, 1500);
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+
+            if (parseInt(Btn) >= 1 && parseInt(Btn) <= 9) {
+                Btn = parseInt(Btn);
+
+                if (document.getElementById('screenContent').innerText == 'Please Enter The Number of The Item You Need') {
+                    document.getElementById('screenContent').innerText = Btn;
+                } else if (document.getElementById('screenContent').innerText.length == 1) {
+                    _1stNumber = parseInt(document.getElementById('screenContent').innerText);
+
+                    if (_1stNumber >= 1 && _1stNumber <= 9) {
+                        document.getElementById('screenContent').innerText += Btn;
+                    } else {
+                        // ---
+                    }
+                } else if (document.getElementById('screenContent').innerText.length == 2) {
+                    document.getElementById('screenContent').innerText += ` (you can only input 2 digits at most)`;
+                    keypadIsResponsive = false;
+
+                    setTimeout(() => {
+                        document.getElementById('screenContent').innerText = document.getElementById('screenContent').innerText.slice(0, 2);
+                        keypadIsResponsive = true;
+                    }, 2100);
+                }
+            } else if (Btn == 'D') {
+
+                if (document.getElementById('screenContent').innerText == 'Please Enter The Number of The Item You Need')
+                    return NaN;
+                else if (document.getElementById('screenContent').innerText.length == 1) {
+                    document.getElementById('screenContent').innerText = 'Please Enter The Number of The Item You Need';
+                } else if (document.getElementById('screenContent').innerText.length == 2) {
+                    document.getElementById('screenContent').innerText = document.getElementById('screenContent').innerText.slice(0, 1);
+                }
+            } else if (Btn == 'E') {
+
+                if (document.getElementById('screenContent').innerText == 'Please Enter The Number of The Item You Need')
+                    return NaN;
+
+                input = parseInt(document.getElementById('screenContent').innerText);
+
+                if (input >= 1 && input <= 5 || input >= 11 && input <= 15 || input >= 21 && input <= 25 || input >= 31 && input <= 35 || input >= 41 && input <= 45) {
+                    list = document.getElementById('menu').getElementsByTagName('div');
+
+                    for (let i = 0; i < list.length; i += 2) {
+                        if (parseInt(list[i].getElementsByTagName('div')[0].getElementsByTagName('h4')[0].innerText.split(': ')[0]) === parseInt(document.getElementById('screenContent').innerText)) {
+                            document.getElementById('screenContent').innerText = `The price is: ${list[i].getElementsByTagName('div')[0].getElementsByTagName('h4')[0].innerText.split(': ')[1]}`;
+                            thePriceValueToPay = parseFloat(list[i].getElementsByTagName('div')[0].getElementsByTagName('h4')[0].innerText.split(': ')[1].replace('$', ''));
+                        }
+                        setTimeout(() => {
+                            document.getElementById('paymentOptions').classList.remove('hidden');
+                        }, 420);
+                    }
+                } else {
+                    document.getElementById('screenContent').innerText += ` (you can only input product numbers as per the available options)`;
+                    keypadIsResponsive = false;
+
+                    setTimeout(() => {
+                        document.getElementById('screenContent').innerText = document.getElementById('screenContent').innerText.slice(0, 2);
+                        keypadIsResponsive = true;
+                    }, 3450);
+                }
+            }
+        }
+
+        function abortPayment() {
+            document.getElementById('paymentOptions').classList.add('hidden');
+            setTimeout(() => {
+                location.reload();
+            }, 210);
+        }
+
+        function cashOpt() {
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('GET', '/checkTheWallet', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.addEventListener('load', function () {
+                if (JSON.parse(xhr.response)) {
+
+                    document.getElementById('10cQty').innerText = `Qty: ${JSON.parse(xhr.response)._10c}`;
+                    document.getElementById('20cQty').innerText = `Qty: ${JSON.parse(xhr.response)._20c}`;
+                    document.getElementById('50cQty').innerText = `Qty: ${JSON.parse(xhr.response)._50c}`;
+                    document.getElementById('1usdQty').innerText = `Qty: ${JSON.parse(xhr.response)._$1}`;
+                    document.getElementById('20usdQty').innerText = `Qty: ${JSON.parse(xhr.response)._$20}`;
+                    document.getElementById('50usdQty').innerText = `Qty: ${JSON.parse(xhr.response)._$50}`;
+
+                } else {
+
+                    // ...
+
+                }
+            });
+
+            xhr.send();
+
+            document.getElementById('paymentOptions').classList.add('hidden');
+            if (thePriceValueToPay > 0.0) {
+                document.getElementById('cashProcedure').classList.remove('hidden');
+            }
+        }
+
+        function insert(money) {
+            if (money == '10c') {
+                thePriceValueToPay = (thePriceValueToPay - 0.10).toFixed(2);
+                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
+            } else if (money == '20c') {
+                thePriceValueToPay = (thePriceValueToPay - 0.20).toFixed(2);
+                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
+            } else if (money == '50c') {
+                thePriceValueToPay = (thePriceValueToPay - 0.50).toFixed(2);
+                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
+            } else if (money == '$1') {
+                thePriceValueToPay = (thePriceValueToPay - 1.00).toFixed(2);
+                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
+            } else if (money == '$20') {
+                thePriceValueToPay = (thePriceValueToPay - 20.0).toFixed(2);
+                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
+            } else if (money == '$50') {
+                thePriceValueToPay = (thePriceValueToPay - 50.0).toFixed(2);
+                document.getElementById('screenContent').innerText = `The price is: ${thePriceValueToPay}`;
+            }
+
+            let xhr = new XMLHttpRequest();
+
+            xhr.open('POST', '/subtractMoney', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.addEventListener('load', function () {
+                if (JSON.parse(xhr.response)) {
+
+                    cashOpt();
+
+                } else {
+
+                    // ...
+
+                }
+            });
+
+            xhr.send(JSON.stringify({ 'Type': `_${money}` }));
+
+            if (thePriceValueToPay == 0.00) {
+                document.getElementById('screenContent').innerText = `Your Payment Was Successful, Enjoy Your Item!`;
+                keypadIsResponsive = false;
+
+                document.getElementById('cashProcedure').classList.add('hidden');
+
+                setTimeout(() => {
+                    document.getElementById('screenContent').innerText = 'Please Enter The Number of The Item You Need';
+                    keypadIsResponsive = true;
+                }, 2100);
+            } else if (thePriceValueToPay < 0.00) {
+                document.getElementById('screenContent').innerText = `Your Change is: $${-thePriceValueToPay}, Enjoy Your Item!`;
+                keypadIsResponsive = false;
+
+                document.getElementById('cashProcedure').classList.add('hidden');
+
+                returnTheChange(-thePriceValueToPay);
+
+                setTimeout(() => {
+                    document.getElementById('screenContent').innerText = 'Please Enter The Number of The Item You Need';
+                    keypadIsResponsive = true;
+                }, 2100);
+            }
+        }
+
+        function returnTheChange(value) {
+
+        }
+
+        function cardOpt() {
+            document.getElementById('paymentOptions').classList.add('hidden');
+            document.getElementById('screenContent').innerText = `Please Enter Your PIN: `;
+            inputingPINMode = true;
+        }
+
+        window.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                press('E');
+            } else if (event.key === 'Backspace' || event.key === 'Delete') {
+                press('D');
+            } else if (event.key === '0') {
+                press(0);
+            } else if (event.key === '1') {
+                press(1);
+            } else if (event.key === '2') {
+                press(2);
+            } else if (event.key === '3') {
+                press(3);
+            } else if (event.key === '4') {
+                press(4);
+            } else if (event.key === '5') {
+                press(5);
+            } else if (event.key === '6') {
+                press(6);
+            } else if (event.key === '7') {
+                press(7);
+            } else if (event.key === '8') {
+                press(8);
+            } else if (event.key === '9') {
+                press(9);
+            } else if (event.key === 'ArrowRight') {
+                if (!document.getElementById('paymentOptions').classList.contains('hidden')) {
+                    cardOpt();
+                }
+            } else if (event.key === 'ArrowLeft') {
+                if (!document.getElementById('paymentOptions').classList.contains('hidden')) {
+                    cashOpt();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
