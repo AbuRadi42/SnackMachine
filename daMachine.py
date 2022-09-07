@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
+from flask_cors import CORS
 from datetime import datetime
-
 
 import json, random
 
 App = Flask(__name__)
+
+CORS(App)
 
 theWallet = {
     '_10c': random.randint(0, 9),

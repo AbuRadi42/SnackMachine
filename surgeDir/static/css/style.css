@@ -1,0 +1,146 @@
+body {
+    overflow: hidden;
+}
+
+#loader {
+    position: relative;
+    top: calc(50vh - 60px);
+    left: calc(50vw - 60px);
+    border: 15px solid #242424;
+    border-top: 15px solid #008230F9;
+    border-right: 15px solid #008230D9;
+    border-bottom: 15px solid #008230B9;
+    border-left: 15px solid #00823099;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 4.2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#PCBrowser {
+    position: relative;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 150px);
+}
+
+#layout {
+    position: relative;
+    height: calc(100vh);
+}
+
+#entryKey {
+    width: calc(100% - 28.4px);
+}
+
+#topSectionInstructions.unopaque,
+#otherOptions.unopaque,
+#createAFreequencyBtn.unopaque,
+#qrScanBox.unopaque,
+#joinTopSectionInstructions.unopaque,
+#switchBackToTheEntryLink.unopaque,
+#micBtn.unopaque,
+#micIcon.unopaque {
+    opacity: 0;
+    transition: 500ms;
+}
+
+#micBtn.disabled {
+    transition: 400ms;
+}
+
+#langBtn {
+    width: 42px;
+    transition: 400ms;
+}
+
+#langBtn.langBtnClicked {
+    width: calc(100% - 2rem);
+    transition: 400ms;
+}
+
+#white-008230 {
+    fill: white;
+    background-color: white;
+    transition: 400ms;
+}
+
+#white-008230.langBtnClicked {
+    fill: #008230;
+    background-color: #008230;
+    transition: 400ms;
+}
+
+#white-999999 {
+    fill: white;
+    background-color: white;
+    transition: 400ms;
+}
+
+#white-999999.langBtnClicked {
+    fill: #999999;
+    background-color: #999999;
+    transition: 400ms;
+}
+
+#snackbar {
+    position: fixed;
+    bottom: 15px;
+    left: calc(15px);
+    visibility: hidden;
+    width: calc(100vw - 30px);
+    background-color: #242424D9;
+    color: whitesmoke;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    z-index: 1;
+}
+
+#QR_Canvas {
+    width: calc(100vw - 4rem);
+    height: 42px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.4s;
+    animation: fadein 0.4s;
+}
+
+#snackbar.hide {
+    visibility: hide;
+    -webkit-animation: fadeout 0.4s 1.6s;
+    animation: fadeout 0.4s 1.6s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 15px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 15px;
+        opacity: 1;
+    }
+}
