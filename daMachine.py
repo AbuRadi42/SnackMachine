@@ -2,11 +2,13 @@ from flask import Flask, render_template, request
 from flask_cors import CORS
 from datetime import datetime
 
-import json, random
+import json, random, string
 
 App = Flask(__name__)
 
 CORS(App)
+
+sessions = {}
 
 theWallet = {
     '_10c': random.randint(0, 9),
@@ -20,7 +22,26 @@ theWallet = {
 @App.get('/')
 def index():
 
-    return render_template('index.html')
+    token = ''.join(random.choices(string.ascii_letters + string.digits, k = 16))
+
+    # return render_template('index.html')
+
+    sessions[token] = {
+        'wallet': {
+            '_10c': random.randint(0, 9),
+            '_20c': random.randint(0, 9),
+            '_50c': random.randint(0, 9),
+            '_$1': random.randint(0, 9),
+            '_$20': random.randint(0, 5),
+            '_$50': random.randint(0, 2)
+        },
+        'events': [] # to add a feature for recording sales
+    }
+
+    return {
+        'response': 'OK',
+        'session': token
+    }
 
 @App.get('/checkTheWallet')
 def checkTheWallet():
