@@ -19,6 +19,19 @@ theWallet = {
     '_$50': random.randint(0, 2)
 }
 
+# an alternative implementation:
+
+# class theWallet:
+
+#     _10c = random.randint(0, 9)
+#     _20c = random.randint(0, 9)
+#     _50c = random.randint(0, 9)
+#     _US1 random.randint(0, 9)
+#     _US20 random.randint(0, 5)
+#     _US50 random.randint(0, 2)
+
+# & yet, with many users:
+
 @App.get('/')
 def index():
 
